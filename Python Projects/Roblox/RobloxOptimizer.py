@@ -14,6 +14,7 @@ STUDIO_UPLOADED_VERSION = loads(STUDIO_VERSION_JSON)["clientVersionUpload"]
 
 ROBLOX_VERSIONS_FOLDER = Path.home() / 'AppData' / 'Local' / 'Roblox' / 'Versions'
 
+#Credit to L8X for making the ClientAppSettings.json file available
 CLIENTAPPSETTINGS_JSON = urlopen("https://raw.githubusercontent.com/L8X/Roblox-Client-Optimizer/main/ClientAppSettings.json").read().decode().rstrip(linesep)
 
 def Import_ClientAppSettings(UPLOADED_VERSION):
@@ -38,4 +39,5 @@ def Import_ClientAppSettings(UPLOADED_VERSION):
         print("[Error]: Could not find the \""+UPLOADED_VERSION+"\" folder!")
         sleep(2)
         exit(0)
-Import_ClientAppSettings(CLIENT_UPLOADED_VERSION) # Put in the parameter the version you want, you can put the client version or the studio version
+# Put in the parameter the version you want, you can put the client version or the studio version
+Import_ClientAppSettings(CLIENT_UPLOADED_VERSION)
