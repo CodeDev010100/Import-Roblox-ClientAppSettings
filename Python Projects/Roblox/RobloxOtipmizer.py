@@ -22,12 +22,12 @@ def Import_ClientAppSettings(UPLOADED_VERSION):
 
     if exists(VERSION_FOLDER):
         print("[Sucess] Found \""+VERSION_FOLDER.name+"\" folder!")
-        caminho_pasta = Path(VERSION_FOLDER) / 'ClientSettings'
-        if exists(caminho_pasta):
-            print("[Error]: the \""+caminho_pasta.name+"\" folder has already been inserted")
+        CLIENTSETTINGS_FOLDER = Path(VERSION_FOLDER) / 'ClientSettings'
+        if exists(CLIENTSETTINGS_FOLDER):
+            print("[Error]: the \""+CLIENTSETTINGS_FOLDER.name+"\" folder has already been inserted")
         else:
             caminho_pasta.mkdir()
-            print("[Sucess] \""+caminho_pasta.name+"\" folder was placed in the folder \""+VERSION_FOLDER.name+"\"")
+            print("[Sucess] \""+CLIENTSETTINGS_FOLDER.name+"\" folder was placed in the folder \""+VERSION_FOLDER.name+"\"")
             json = Path(VERSION_FOLDER) / 'ClientSettings' / 'ClientAppSettings.json'
             json.touch()
             json.write_text(CLIENTAPPSETTINGS_JSON)
